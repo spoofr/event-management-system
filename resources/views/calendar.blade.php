@@ -28,7 +28,7 @@
                 },
                 defaultDate: '2018-02-12',
                 navLinks: true, // can click day/week names to navigate views
-                editable: true,
+                editable: false,
                 eventLimit: true, // allow "more" link when too many events
                 events: [{
                         title: 'All Day Event',
