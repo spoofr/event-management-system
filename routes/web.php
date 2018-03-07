@@ -22,3 +22,7 @@ Route::get('/calendar', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/events', 'EventsController@index')->name('event.index');
+Route::post('/events', 'EventsController@store')->name('event.store');
