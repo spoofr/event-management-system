@@ -74,7 +74,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                <a href="{{ route('calendar') }}" class="btn btn-primary btn-lg">Go To Calendar</a>
+                <a href="{{ route('event.index') }}" class="btn btn-primary btn-lg">Go To Event Calendar</a>
             </div>
         </div>
     </div>

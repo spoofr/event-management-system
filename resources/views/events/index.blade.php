@@ -87,53 +87,57 @@
     <main class="py-4">
         <div class="container">
 
-            {{-- Alert message --}} 
-            @if(Session::has('success'))
+            {{-- Alert message --}} @if(Session::has('success'))
             <div class="alert alert-success" role="alert">
                 {{ Session::get('success') }}
             </div>
-            @endif 
-            {{-- Content here --}}
+            @endif {{-- Content here --}}
+
             <div class="card mb-4">
                 <div class="card-body">
-
-                    <form class="form-inline" action="{{ route('event.store') }}" method="POST">
+                    <form class="form-row" action="{{ route('event.store') }}" method="POST">
                         {{ csrf_field() }}
-                        <div class="form-group mx-sm-3 mb-2">
-                            <input type="text" class="form-control" placeholder="Event name" name="event_name">
+                        <div class="form-group col-md-3">
+                            <label>Event name: </label>
+                            <input type="text" class="form-control" placeholder="eg: Holiday" name="event_name"> 
                             @if ($errors->has('event_name'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('event_name') }}</strong>
-                                    </span>
-                                @endif
+                            <div class="text-danger mt-3">
+                                <p class="mb-0">{{ $errors->first('event_name') }}</p>
+                            </div>
+                            @endif
                         </div>
-                        <div class="form-group mx-sm-3 mb-2">
-                            <input type="text" class="form-control" placeholder="Start date" name="start_date">
+                        <div class="form-group col-md-3">
+                            <label>Start date: </label>
+                            <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="start_date">
                             @if ($errors->has('start_date'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('start_date') }}</strong>
-                                    </span>
-                                @endif
+                            <div class="text-danger mt-3">
+                                <p class="mb-0">{{ $errors->first('start_date') }}</p>
+                            </div>
+                            @endif
                         </div>
-                        <div class="form-group mx-sm-3 mb-2">
-                            <input type="text" class="form-control" placeholder="End date" name="end_date">
+                        <div class="form-group col-md-3">
+                            <label>End date</label>
+                            <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="end_date">
                             @if ($errors->has('end_date'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('end_date') }}</strong>
-                                    </span>
-                                @endif
+                            <div class="text-danger mt-3">
+                                <p class="mb-0">{{ $errors->first('end_date') }}</p>
+                            </div>
+                            @endif
                         </div>
-                        <button type="submit" class="btn btn-primary mb-2">Create Event!</button>
+                        <div class="form-group col-md-3">
+                            <label style="visibility: hidden;">Create</label>
+                            <button type="submit" class="btn btn-primary form-control">Create Event!</button>
+                        </div>
                     </form>
                 </div>
             </div>
+
 
             <div class="card">
                 <div class="card-body">
                     {!! $calendar_details->calendar() !!}
                 </div>
             </div>
-
         </div>
     </main>
 
