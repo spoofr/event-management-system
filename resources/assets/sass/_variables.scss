@@ -1,43 +1,6 @@
-// Font
-$font-family-sans-serif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$body-color: #666 !default;
 
-// Background
-$body-bg: #f8f8f8 !default;
+// Body
+$body-bg: #f5f8fa;
 
-// Border radius
-$border-radius: 1px !default;
-$border-radius-lg: 1px !default;
-$border-radius-sm: 1px !default;
-
-// Form
-$input-btn-focus-width: 0px !default;
-// $input-btn-focus-color:       rgba($component-active-bg, .25) !default;
-
-// Color
-$light: #fff !default;
-$dark: #333 !default;
-
-// Color
-$blue:    #1e87f0 !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #f0506e !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #32d296 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
-// $gray-100: #fff !default;
-$gray-600: #222 !default;
-
-// Badge
-$badge-font-size: 0.875rem !default;
-$badge-font-weight: 400 !default;
-$badge-padding-y: 5px !default;
-$badge-padding-x: 10px !default;
-$badge-border-radius: 500px !default;
-
-// Placeholder
-$input-placeholder-color: #6c757d !default;
+// Typography
+$font-family-sans-serif: system-ui, sans-serif;

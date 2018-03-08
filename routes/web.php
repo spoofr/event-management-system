@@ -11,14 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/events', 'EventsController@index')->name('event.index')->middleware('auth');
 Route::post('/events', 'EventsController@store')->name('event.store')->middleware('auth');

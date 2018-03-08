@@ -23,6 +23,8 @@ class EventsController extends Controller
             );
         }
         $calendar_details = Calendar::addEvents($event_list);
+
+        // dd($calendar_details);
         // Simply return page
         return view('events.index', compact('calendar_details'));
     }
