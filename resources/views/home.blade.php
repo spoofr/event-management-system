@@ -15,6 +15,10 @@
                     @endif
 
                     <p>You are logged in!</p>
+
+                    <a href="{{ route('event.index') }}" class="btn btn-primary">Event</a>
+                    <a href="#" class="btn btn-primary">Waktu Solat</a>
+                    
                 </div>
             </div>
         </div>
