@@ -12,6 +12,7 @@ class EventsController extends Controller
 {
     public function index()
     {   
+        // https://github.com/maddhatter/laravel-fullcalendar
         $events = Event::get();
         $event_list = [];
         foreach($events as $key => $event){
@@ -24,7 +25,6 @@ class EventsController extends Controller
         }
         $calendar_details = Calendar::addEvents($event_list);
 
-        // dd($calendar_details);
         // Simply return page
         return view('events.index', compact('calendar_details'));
     }
