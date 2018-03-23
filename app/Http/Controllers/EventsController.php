@@ -12,26 +12,29 @@ class EventsController extends Controller
 {
     public function index()
     {   
-        // https://github.com/maddhatter/laravel-fullcalendar
-        $events = Event::get();
-        $event_list = [];
-        foreach($events as $key => $event){
-            $event_list[] = Calendar::event(
-                $event->event_name, // Event title
-                true, // Full day event?
-                new \DateTime($event->start_date), // Start date
-                new \DateTime($event->end_date.' +1 day'), // End date
-                $event->id, // Optional event id
-                    [
-                        'color' => '#f05050',
-                        'url' => '/event/' . $event->id,
-                    ]
-            );
-        }
-        $calendar_details = Calendar::addEvents($event_list);
+        $events = Event::all();
+        return view('events.index', compact('events'));
 
-        // Simply return page
-        return view('events.index', compact('calendar_details'));
+        // https://github.com/maddhatter/laravel-fullcalendar
+        // $events = Event::get();
+        // $event_list = [];
+        // foreach($events as $key => $event){
+        //     $event_list[] = Calendar::event(
+        //         $event->event_name, // Event title
+        //         true, // Full day event?
+        //         new \DateTime($event->start_date), // Start date
+        //         new \DateTime($event->end_date.' +1 day'), // End date
+        //         $event->id, // Optional event id
+        //             [
+        //                 'color' => '#f05050',
+        //                 'url' => '/events/' . $event->id,
+        //             ]
+        //     );
+        // }
+        // $calendar_details = Calendar::addEvents($event_list);
+
+        // // Simply return page
+        // return view('events.index', compact('calendar_details'));
     }
 
     public function store(Request $request)

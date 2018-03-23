@@ -14,10 +14,50 @@
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('fullcalendar/lib/moment.min.js') }}"></script>
-    <script src="{{ asset('fullcalendar/lib/jquery.min.js') }}"></script>
     <script src="{{ asset('fullcalendar/fullcalendar.min.js') }}"></script>
 
-    {!! $calendar_details->script() !!}
+    {{-- {!! $calendar_details->script() !!} --}}
+
+    <script>
+        $(document).ready(function () {
+            // page is now ready, initialize the calendar...
+            $('#calendar').fullCalendar({
+                // put your options and callbacks here
+                header: {
+                    left: 'title prev,next',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                // eventClick: function(calEvent, jsEvent, view) {
+                //     $("#myModal").modal('show');
+                // },
+                
+                eventRender: function (event, element) {
+                    element.attr('href', 'javascript:void(0);');
+                    element.click(function() {
+                        $("#id").html(event.id);
+                        $("#name").html(event.title);
+                        $("#start_date").html(moment(event.start).format('DD MMM YYYY'));
+                        $("#end_date").html(moment(event.end).format('DD MMM YYYY'));                        
+                        $("#myModal").modal('show');
+                    });
+                },
+
+
+
+
+                events: [
+                    @foreach($events as $event) {
+                        id: '{{ $event->id }}',
+                        title: '{{ $event->event_name }}',
+                        start: '{{ $event->start_date }}',
+                        end: '{{ $event->end_date }}',
+                        // url: '{{ route('home') }}',
+                    },
+                    @endforeach
+                ]
+            })
+        });
+    </script>
 
     <style>
         .fc-title {
@@ -136,12 +176,35 @@
 
             <div class="card">
                 <div class="card-body">
-                    {!! $calendar_details->calendar() !!}
+                    <div id='calendar'></div>
+                    {{-- {!! $calendar_details->calendar() !!} --}}
                 </div>
             </div>
         </div>
     </main>
 
+                              <!-- Modal -->
+                              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel"><span id="name"></span></h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <h6>Event ID: #<span id="id"></span></h6>
+                                          <h6>Start date: <span id="start_date"></span></h6>
+                                          <h6>End date: <span id="end_date"></span></h6>                                        
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                          <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
 
 </body>
 
