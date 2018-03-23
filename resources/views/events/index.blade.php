@@ -111,7 +111,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label>Start date: </label>
-                            <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="start_date"> @if ($errors->has('start_date'))
+                            <input type="date" class="form-control" name="start_date"> @if ($errors->has('start_date'))
                             <div class="text-danger mt-3">
                                 <p class="mb-0">{{ $errors->first('start_date') }}</p>
                             </div>
@@ -119,7 +119,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label>End date</label>
-                            <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="end_date"> @if ($errors->has('end_date'))
+                            <input type="date" class="form-control" name="end_date"> @if ($errors->has('end_date'))
                             <div class="text-danger mt-3">
                                 <p class="mb-0">{{ $errors->first('end_date') }}</p>
                             </div>
