@@ -17,10 +17,10 @@ class EventsController extends Controller
         $event_list = [];
         foreach($events as $key => $event){
             $event_list[] = Calendar::event(
-                $event->event_name,
-                true,
-                new \DateTime($event->start_date),
-                new \DateTime($event->end_date.' +1 day')
+                $event->event_name, // Event title
+                true, // Full day event?
+                new \DateTime($event->start_date), // Start date
+                new \DateTime($event->end_date.' +1 day') // End date
             );
         }
         $calendar_details = Calendar::addEvents($event_list);
