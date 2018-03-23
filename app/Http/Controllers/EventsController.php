@@ -20,7 +20,12 @@ class EventsController extends Controller
                 $event->event_name, // Event title
                 true, // Full day event?
                 new \DateTime($event->start_date), // Start date
-                new \DateTime($event->end_date.' +1 day') // End date
+                new \DateTime($event->end_date.' +1 day'), // End date
+                $event->id, // Optional event id
+                    [
+                        'color' => '#f05050',
+                        'url' => '/event/' . $event->id,
+                    ]
             );
         }
         $calendar_details = Calendar::addEvents($event_list);
