@@ -4,7 +4,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <b>{{ $event->event_name }}</b>
+                    <h5 class="mb-0">Event Details - {{ $event->event_name }}</h5>
                 </div>
                 <div class="card-body">
                     <p>Event ID:
@@ -31,7 +31,7 @@
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Update Event - {{ $event->event_name }}</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel"><h5 class="mb-0">Update Event - {{ $event->event_name }}</h5></h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -68,7 +68,7 @@
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                     <button type="button" class="btn btn-primary" onclick="event.preventDefault();
                                     document.getElementById('update-event-form').submit();">Save</button>
                                 </div>
