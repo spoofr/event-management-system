@@ -16,9 +16,9 @@
     <script src="{{ asset('fullcalendar/lib/moment.min.js') }}"></script>
     <script src="{{ asset('fullcalendar/fullcalendar.min.js') }}"></script>
 
-    {{-- {!! $calendar_details->script() !!} --}}
-
-    <script>
+    {!! $calendar_details->script() !!} 
+    
+    {{-- <script>
         $(document).ready(function () {
             // page is now ready, initialize the calendar...
             $('#calendar').fullCalendar({
@@ -27,36 +27,37 @@
                     left: 'title prev,next',
                     right: 'month,agendaWeek,agendaDay'
                 },
-                eventRender: function (event, element) {
-                    element.attr('href', 'javascript:void(0);');
-                    element.click(function () {
-                        $("#id").html(event.id);
-                        $("#name").html(event.title);
-                        $("#start_date").html(moment(event.start).format('DD MMM YYYY'));
-                        $("#end_date").html(moment(event.end).format('DD MMM YYYY'));
-                        $("#myModal").modal('show');
-                    });
-                },
+                // eventRender: function (event, element) {
+                //     element.attr('href', 'javascript:void(0);');
+                //     element.click(function () {
+                //         $("#id_number").html(event.id);
+                //         $("#id").html(event.id);
+                //         $("#name").html(event.title);
+                //         $("#start_date").html(moment(event.start).format('DD MMM YYYY'));
+                //         $("#end_date").html(moment(event.end).format('DD MMM YYYY'));
+                //         $("#myModal").modal('show');
+                //     });
+                // },
                 events: [
                     @foreach($events as $event) {
                         id: '{{ $event->id }}',
                         title: '{{ $event->event_name }}',
                         start: '{{ $event->start_date }}',
                         end: '{{ $event->end_date }}',
-                        color: '#f05050'
-                        // url: '{{ route('home') }}',
+                        color: '#f05050',
+                        url: '{{ route('
+                        event.show ', $event->id) }}'
                     },
                     @endforeach
                 ]
             })
         });
-    </script>
+    </script> --}}
 
     <style>
         .fc-title {
             color: #fff;
         }
-
         .fc-time {
             color: #fff;
         }
@@ -64,7 +65,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -74,13 +74,10 @@
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-
                 </ul>
-
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
@@ -98,7 +95,6 @@
                             {{ Auth::user()->name }}
                             <span class="caret"></span>
                         </a>
-
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('event.index') }}">Events</a>
                             <a class="dropdown-item" href="#">Waktu solat</a>
@@ -107,7 +103,6 @@
                                                          document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
@@ -119,16 +114,14 @@
         </div>
     </nav>
 
-
     <main class="py-4">
         <div class="container">
-
-            {{-- Alert message --}} @if(Session::has('success'))
+            {{-- Alert message --}} 
+            @if(Session::has('success'))
             <div class="alert alert-success" role="alert">
                 {{ Session::get('success') }}
             </div>
             @endif {{-- Content here --}}
-
             <div class="card mb-4">
                 <div class="card-header">Create Events</div>
                 <div class="card-body">
@@ -166,30 +159,32 @@
                 </div>
             </div>
 
-
             <div class="card">
                 <div class="card-body">
-                    <div id='calendar'></div>
-                    {{-- {!! $calendar_details->calendar() !!} --}}
+                    {{-- <div id='calendar'></div> --}} 
+                    {!! $calendar_details->calendar() !!}
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        Event Name: <span id="name"></span>
+                        Event Name:
+                        <span id="name"></span>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h6>Event ID: #<span id="id"></span></h6>
+                    <h6>Event ID: #
+                        <span id="id"></span>
+                    </h6>
                     <h6>Start date:
                         <span id="start_date"></span>
                     </h6>
@@ -197,14 +192,12 @@
                         <span id="end_date"></span>
                     </h6>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
-    </div>
-
+    </div> --}}
 </body>
-
 </html>

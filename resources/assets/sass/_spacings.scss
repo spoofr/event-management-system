@@ -1,0 +1,41 @@
+@mixin margin-helper($level, $spacing) {
+    .m-#{$level} {margin: #{$spacing}!important;}
+    .mx-#{$level} {margin-left: #{$spacing}!important;margin-right: #{$spacing}!important;}
+    .my-#{$level} {margin-top: #{$spacing}!important;margin-bottom: #{$spacing}!important;}
+    .mt-#{$level} {margin-top: #{$spacing}!important;}
+    .mb-#{$level} {margin-bottom: #{$spacing}!important;}
+    .ml-#{$level} {margin-left: #{$spacing}!important;}
+    .mr-#{$level} {margin-right: #{$spacing}!important;}
+  }
+  
+  @include margin-helper(0, 0);
+  @include margin-helper(1, .5rem);
+  @include margin-helper(2, 1rem);
+  @include margin-helper(3, 1.5rem);
+  @include margin-helper(4, 2rem);
+  
+  @mixin padding-helper($level, $spacing) {
+    .p-#{$level} {padding: #{$spacing}!important;}
+    .px-#{$level} {padding-left: #{$spacing}!important;padding-right: #{$spacing}!important;}
+    .py-#{$level} {padding-top: #{$spacing}!important;padding-bottom: #{$spacing}!important;}
+    .pt-#{$level} {padding-top: #{$spacing}!important;}
+    .pb-#{$level} {padding-bottom: #{$spacing}!important;}
+    .pl-#{$level} {padding-left: #{$spacing}!important;}
+    .pr-#{$level} {padding-right: #{$spacing}!important;}
+  }
+  
+  @include padding-helper(0, 0);
+  @include padding-helper(1, .5rem);
+  @include padding-helper(2, 1rem);
+  @include padding-helper(3, 1.5rem);
+  @include padding-helper(4, 2rem);
+  
+  @mixin letter-spacing($level, $spacing) {
+    .wide-#{$level} {letter-spacing: #{$spacing}!important;}
+  }
+  
+  @include letter-spacing(1, .1rem);
+  @include letter-spacing(2, .2rem);
+  @include letter-spacing(3, .3rem);
+  @include letter-spacing(4, .4rem);
+  @include letter-spacing(5, .5rem);
