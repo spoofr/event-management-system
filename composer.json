@@ -20,6 +20,10 @@
         "symfony/thanks": "^1.0"
     },
     "autoload": {
+        "files": [
+            "public/api.php",
+            "public/apiv2.php"
+        ],
         "classmap": [
             "database/seeds",
             "database/factories"
