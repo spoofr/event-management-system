@@ -15,6 +15,8 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('api/{zon}', 'SolatController@api');
+
 Route::get('/events', 'EventsController@index')->name('event.index')->middleware('auth');
 Route::post('/events', 'EventsController@store')->name('event.store')->middleware('auth');
 Route::delete('/events/destroy/{event}', 'EventsController@destroy')->name('event.destroy');
