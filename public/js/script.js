@@ -36,7 +36,7 @@ $(document).ready(function(){
 		$('#results').empty();
 		
 		var codeZon = $('#pilih_zone').val();
-		var apiURL = "http://laravel-event-fullcalendar.work/api/"+codeZon; //my JSON API
+		var apiURL = "http://calendar.gg/api/"+codeZon; //my JSON API
 		
 		$.getJSON( apiURL, function( data ) {
 
