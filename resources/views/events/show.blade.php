@@ -34,7 +34,9 @@
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel"><h5 class="mb-0">Update Event - {{ $event->event_name }}</h5></h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                        <h5 class="mb-0">Update Event - {{ $event->event_name }}</h5>
+                                    </h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -44,49 +46,47 @@
                                         @csrf {{ method_field('PATCH') }}
                                         <form>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Event ID:</label>
-                                                <div class="col-sm-10">
+                                                <label class="col-sm-3 col-form-label">Event ID:</label>
+                                                <div class="col-sm-9">
                                                     <input type="text" readonly class="form-control-plaintext" name="id" value="{{ $event->id }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Event Name: </label>
-                                                <div class="col-sm-10">
+                                                <label class="col-sm-3 col-form-label">Event Name: </label>
+                                                <div class="col-sm-9">
                                                     <input type="text" class="form-control" name="event_name" value="{{ $event->event_name }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Event Description: </label>
-                                                <div class="col-sm-10">
+                                                <label class="col-sm-3 col-form-label">Event Description: </label>
+                                                <div class="col-sm-9">
                                                     <input type="text" class="form-control" name="event_description" value="{{ $event->event_description }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Event Color: </label>
-                                                <div class="col-sm-10">
-                                                     <div class="form-group col-md-4">
-                                                            <select name="event_color" class="form-control">
-                                                                <option value="Blue">Blue</option>
-                                                                <option value="Green">Green</option>
-                                                                <option value="Red">Red</option>
-                                                            </select>
-                                                        @if ($errors->has('event_description'))
-                                                        <div class="text-danger mt-3">
+                                                <label class="col-sm-3 col-form-label">Event Color: </label>
+                                                <div class="col-sm-9">
+                                                    <select name="event_color" class="form-control">
+                                                        <option value="Blue">Blue</option>
+                                                        <option value="Green">Green</option>
+                                                        <option value="Red">Red</option>
+                                                    </select>
+                                                    @if ($errors->has('event_description'))
+                                                    <div class="text-danger mt-3">
                                                         <p class="mb-0">{{ $errors->first('event_description') }}</p>
-                                                        </div>
-                                                        @endif
                                                     </div>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Start date: </label>
-                                                <div class="col-sm-10">
+                                                <label class="col-sm-3 col-form-label">Start date: </label>
+                                                <div class="col-sm-9">
                                                     <input type="date" class="form-control" name="start_date" value="{{ $event->start_date }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">End Name: </label>
-                                                <div class="col-sm-10">
+                                                <label class="col-sm-3 col-form-label">End Name: </label>
+                                                <div class="col-sm-9">
                                                     <input type="date" class="form-control" name="end_date" value="{{ $event->end_date }}">
                                                 </div>
                                             </div>
