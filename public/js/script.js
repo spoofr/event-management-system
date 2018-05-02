@@ -10,7 +10,7 @@ $(document).ready(function(){
 		$('#results').empty();
 		
 		//use jquery getJSON function to fetch json data
-		$.getJSON( "http://calendar.gg/zone.json", function( data ) {
+		$.getJSON( "http://ezcalendar.gg/zone.json", function( data ) {
 		
 		//convert string to uppercase, needed so that can use to compare with the json file.
 		//malas nak tukar satu2 kat index.html xD
@@ -36,7 +36,7 @@ $(document).ready(function(){
 		$('#results').empty();
 		
 		var codeZon = $('#pilih_zone').val();
-		var apiURL = "http://calendar.gg/api/"+codeZon; //my JSON API
+		var apiURL = "http://ezcalendar.gg/api/"+codeZon; //my JSON API
 		
 		$.getJSON( apiURL, function( data ) {
 

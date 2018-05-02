@@ -30,7 +30,7 @@ Sensei : Mohd Shahril, thanks for zone.json :P
 
             <div class="row">
                 <h1>
-                    <font color="white">Waktu Solat</font>
+                    <font color="black">Waktu Solat</font>
                 </h1>
                 <hr>
             </div>

@@ -42,6 +42,8 @@
                     @foreach($events as $event) {
                         id: '{{ $event->id }}',
                         title: '{{ $event->event_name }}',
+                        description: '{{ $event->event_description }}',
+                        color: '{{ $event->event_color }}',
                         start: '{{ $event->start_date }}',
                         end: '{{ $event->end_date }}',
                         color: '#f05050',
@@ -135,6 +137,34 @@
                             </div>
                             @endif
                         </div>
+                        <div class="form-group col-md-4">
+                            <label>Event description: </label>
+                            <input type="text" class="form-control" placeholder="eg: URGENT" name="event_description"> @if ($errors->has('event_description'))
+                            <div class="text-danger mt-3">
+                                <p class="mb-0">{{ $errors->first('event_description') }}</p>
+                            </div>
+                            @endif
+                        </div>
+                    <div class="form-group col-md-4">
+                        <div class="form-control">
+                            <div class="panel panel-success">
+                              <div class="panel-heading"></div>
+                                <div class="panel-body">
+                                  <!-- pilih color -->
+                                 <label>Choose color: </label>
+                                 <select name='event_color' id='event_color' class="form-control">
+                                 
+                                 <option value="Blue">Blue</option>
+                                 <option value="Green">Green</option>
+                                 <option value="Red">Red</option>
+                               
+                                 </select>
+
+                             
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                         <div class="form-group col-md-3">
                             <label>Start date: </label>
                             <input type="date" class="form-control" name="start_date"> @if ($errors->has('start_date'))

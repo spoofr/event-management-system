@@ -10,8 +10,11 @@
                     <p>Event ID:
                         <b>{{ $event->id }}</b>
                     </p>
-                    <p>Event Name:
-                        <b>{{ $event->event_name }}</b>
+                    <p>Event Description:
+                        <b>{{ $event->event_description }}</b>
+                    </p>
+                    <p>Event Color:
+                        <b>{{ $event->event_color}}</b>
                     </p>
                     <p>Start Date:
                         <b>{{ $event->start_date }}</b>
@@ -50,6 +53,18 @@
                                                 <label class="col-sm-2 col-form-label">Event Name: </label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="event_name" value="{{ $event->event_name }}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Event Description: </label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="event_description" value="{{ $event->event_description }}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Event Color: </label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="event_color" value="{{ $event->event_color }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">

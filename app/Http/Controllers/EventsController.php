@@ -42,6 +42,8 @@ class EventsController extends Controller
         // Validation, untuk pastikan data yang user masukkan betul
         $this->validate($request, [
             'event_name' => 'required',
+            'event_description' => 'required',
+            'event_color' => 'required',
             'start_date' => 'required',
             'end_date' => 'required'
         ]);
@@ -51,6 +53,8 @@ class EventsController extends Controller
 
         // Assign data in request (data yg user masukkan dalam form) to the new object
         $event->event_name = $request->event_name;
+        $event->event_description = $request->event_description;
+        $event->event_color = $request->event_color;
         $event->start_date = $request->start_date;
         $event->end_date = $request->end_date;
 
@@ -81,6 +85,8 @@ class EventsController extends Controller
     {
         $event = Event::find($id);
         $event->event_name = $request->event_name;
+        $event->event_description = $request->event_description;
+        $event->event_color = $request->event_color;
         $event->start_date = $request->start_date;
         $event->end_date = $request->end_date;
         $event->save();
