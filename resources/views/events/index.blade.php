@@ -16,9 +16,8 @@
     <script src="{{ asset('fullcalendar/lib/moment.min.js') }}"></script>
     <script src="{{ asset('fullcalendar/fullcalendar.min.js') }}"></script>
 
-    {!! $calendar_details->script() !!} 
-    
-    {{-- <script>
+    {!! $calendar_details->script() !!} {{--
+    <script>
         $(document).ready(function () {
             // page is now ready, initialize the calendar...
             $('#calendar').fullCalendar({
@@ -60,6 +59,7 @@
         .fc-title {
             color: #fff;
         }
+
         .fc-time {
             color: #fff;
         }
@@ -118,8 +118,7 @@
 
     <main class="py-4">
         <div class="container">
-            {{-- Alert message --}} 
-            @if(Session::has('success'))
+            {{-- Alert message --}} @if(Session::has('success'))
             <div class="alert alert-success" role="alert">
                 {{ Session::get('success') }}
             </div>
@@ -129,6 +128,7 @@
                 <div class="card-body">
                     <form class="form-row" action="{{ route('event.store') }}" method="POST">
                         {{ csrf_field() }}
+
                         <div class="form-group col-md-4">
                             <label>Event name: </label>
                             <input type="text" class="form-control" placeholder="eg: Holiday" name="event_name"> @if ($errors->has('event_name'))
@@ -137,6 +137,7 @@
                             </div>
                             @endif
                         </div>
+
                         <div class="form-group col-md-4">
                             <label>Event description: </label>
                             <input type="text" class="form-control" placeholder="eg: URGENT" name="event_description"> @if ($errors->has('event_description'))
@@ -145,26 +146,21 @@
                             </div>
                             @endif
                         </div>
-                    <div class="form-group col-md-4">
-                        <div class="form-control">
-                            <div class="panel panel-success">
-                              <div class="panel-heading"></div>
-                                <div class="panel-body">
-                                  <!-- pilih color -->
-                                 <label>Choose color: </label>
-                                 <select name='event_color' id='event_color' class="form-control">
-                                 
-                                 <option value="Blue">Blue</option>
-                                 <option value="Green">Green</option>
-                                 <option value="Red">Red</option>
-                               
-                                 </select>
 
-                             
-                                </div>
+                        <div class="form-group col-md-4">
+                            <label>Event Color: </label>
+                            <select name="event_color" class="form-control">
+                                <option value="Blue">Blue</option>
+                                <option value="Green">Green</option>
+                                <option value="Red">Red</option>
+                            </select>
+                            @if ($errors->has('event_description'))
+                            <div class="text-danger mt-3">
+                                <p class="mb-0">{{ $errors->first('event_description') }}</p>
                             </div>
+                            @endif
                         </div>
-                    </div>
+
                         <div class="form-group col-md-3">
                             <label>Start date: </label>
                             <input type="date" class="form-control" name="start_date"> @if ($errors->has('start_date'))
@@ -188,18 +184,19 @@
                     </form>
                 </div>
             </div>
-
             <div class="card">
                 <div class="card-body">
-                    {{-- <div id='calendar'></div> --}} 
-                    {!! $calendar_details->calendar() !!}
+                    {{--
+                    <div id='calendar'></div> --}} {!! $calendar_details->calendar() !!}
                 </div>
             </div>
         </div>
+
     </main>
 
     <!-- Modal -->
-    {{-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{--
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -230,4 +227,5 @@
         </div>
     </div> --}}
 </body>
+
 </html>
