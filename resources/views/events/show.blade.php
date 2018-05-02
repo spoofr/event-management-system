@@ -64,7 +64,18 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Event Color: </label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="event_color" value="{{ $event->event_color }}">
+                                                     <div class="form-group col-md-4">
+                                                            <select name="event_color" class="form-control">
+                                                                <option value="Blue">Blue</option>
+                                                                <option value="Green">Green</option>
+                                                                <option value="Red">Red</option>
+                                                            </select>
+                                                        @if ($errors->has('event_description'))
+                                                        <div class="text-danger mt-3">
+                                                        <p class="mb-0">{{ $errors->first('event_description') }}</p>
+                                                        </div>
+                                                        @endif
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
