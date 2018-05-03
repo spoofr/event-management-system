@@ -26,7 +26,7 @@ class EventsController extends Controller
                 new \DateTime($event->end_date.' +1 day'), // End date
                 $event->id, // Optional event id
                     [
-                        'color' => '$event->event_color',
+                        'color' => $event->event_color,
                         'url' => '/events/' . $event->id,
                     ]
             );
