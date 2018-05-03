@@ -16,10 +16,10 @@
     <script src="{{ asset('fullcalendar/lib/moment.min.js') }}"></script>
     <script src="{{ asset('fullcalendar/fullcalendar.min.js') }}"></script>
 
+            // page is now ready, initialize the calendar...
     {!! $calendar_details->script() !!} {{--
     <script>
         $(document).ready(function () {
-            // page is now ready, initialize the calendar...
             $('#calendar').fullCalendar({
                 // put your options and callbacks here
                 header: {
@@ -150,9 +150,9 @@
                         <div class="form-group col-md-4">
                             <label>Event Color: </label>
                             <select name="event_color" class="form-control">
-                                <option value="Blue">Blue</option>
-                                <option value="Green">Green</option>
-                                <option value="Red">Red</option>
+                                <option value="#1e87f0">Blue</option>
+                                <option value="#f0506e">Red</option>
+                                <option value="#faa05a">Orange</option>
                             </select>
                             @if ($errors->has('event_description'))
                             <div class="text-danger mt-3">
