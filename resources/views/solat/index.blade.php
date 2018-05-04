@@ -13,7 +13,7 @@ Sensei : Mohd Shahril, thanks for zone.json :P
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="shortcut icon" href="./template/images/favicon.ico">
-    <title>Waktu Solat</title>
+    <title>Prayer Time</title>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,7 +30,7 @@ Sensei : Mohd Shahril, thanks for zone.json :P
 
             <div class="row">
                 <h1>
-                    <font color="black">Waktu Solat</font>
+                    <font color="black">Prayer Time</font>
                 </h1>
                 <hr>
             </div>
@@ -42,7 +42,7 @@ Sensei : Mohd Shahril, thanks for zone.json :P
                         <div class="panel-body">
                             <!-- pilih negeri -->
                             <select name='pilih_negeri' id='pilih_negeri' class="form-control">
-                                <option value=''>Pilih Negeri</option>
+                                <option value=''>Select States</option>
                                 <option value="Johor">Johor</option>
                                 <option value="Kedah">Kedah</option>
                                 <option value="Kelantan">Kelantan</option>
@@ -63,7 +63,7 @@ Sensei : Mohd Shahril, thanks for zone.json :P
 
                             <!-- pilih zone -->
                             <select id='pilih_zone' name='pilih_zone' class="form-control">
-                                <option value=''>Pilih Zon</option>
+                                <option value=''>Select Zone</option>
                             </select>
                         </div>
                     </div>
@@ -91,14 +91,7 @@ Sensei : Mohd Shahril, thanks for zone.json :P
             <div class="card">
                 <div class="card-header">Malaysia Prayer Time</div>
 
-                <div class="card-body">
-                    <select class="custom-select">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                </div>
+               
             </div>
         </div>
     </div>
