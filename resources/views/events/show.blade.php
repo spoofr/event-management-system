@@ -13,8 +13,14 @@
                     <p>Event Description:
                         <b>{{ $event->event_description }}</b>
                     </p>
-                    <p>Event Color:
-                        <b>{{ $event->event_color}}</b>
+                    <p>Event Color: 
+                        @if($event->event_color == '#1e87f0')
+                        <span class="badge badge-primary" style="background-color: #1e87f0">Blue</span>
+                        @elseif($event->event_color == '#f0506e')
+                        <span class="badge badge-primary" style="background-color: #f0506e">Red</span>
+                        @elseif($event->event_color == '#faa05a')
+                        <span class="badge badge-primary" style="background-color: #faa05a">Orange</span>
+                        @endif
                     </p>
                     <p>Start Date:
                         <b>{{ $event->start_date }}</b>

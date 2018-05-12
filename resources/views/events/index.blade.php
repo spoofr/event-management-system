@@ -16,8 +16,9 @@
     <script src="{{ asset('fullcalendar/lib/moment.min.js') }}"></script>
     <script src="{{ asset('fullcalendar/fullcalendar.min.js') }}"></script>
 
-            // page is now ready, initialize the calendar...
-    {!! $calendar_details->script() !!} {{--
+    {{-- Page is now ready, initialize the calendar... --}}
+    {!! $calendar_details->script() !!} 
+    {{--
     <script>
         $(document).ready(function () {
             $('#calendar').fullCalendar({
