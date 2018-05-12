@@ -73,9 +73,9 @@
                                                 <label class="col-sm-3 col-form-label">Event Color: </label>
                                                 <div class="col-sm-9">
                                                     <select name="event_color" class="form-control">
-                                                        <option value="Blue">Blue</option>
-                                                        <option value="Green">Green</option>
-                                                        <option value="Red">Red</option>
+                                                        <option value="#1e87f0">Blue</option>
+                                                        <option value="#faa05a">Orange</option>
+                                                        <option value="#f0506e">Red</option>
                                                     </select>
                                                     @if ($errors->has('event_description'))
                                                     <div class="text-danger mt-3">
