@@ -58,15 +58,15 @@ $(document).ready(function () {
 				"<tr><th>Asar</th><td>" + asar + "</td></tr>" +
 				"<tr><th>Maghrib</th><td>" + maghrib + "</td></tr>" +
 				"<tr><th>Isyak</th><td>" + isyak + "</td></tr>" +
-				"</tbody></table>";
+				"</tbody></table></div></div></div>";
 
 			var panel1 = "<div class='col-md-12'>" +
 				"<div class='card'>" +
 				"<div class='card-body'>";
 
-			var panel2 = "</div>" +
-				"</div>" +
-				"</div>";
+			var panel2 = '</div>' +
+				'</div>' +
+				'</div>';
 
 			$('#results').append(panel1 + results + panel2).hide().fadeIn('slow'); //append the result with slow fade in animation
 			$('.se-pre-con').fadeOut('fast'); // hide loading
