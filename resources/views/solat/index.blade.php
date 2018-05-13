@@ -117,23 +117,10 @@ Sensei : Mohd Shahril, thanks for zone.json :P
 
     <div class="container">
         <div class="row justify-content-center">
-            {{--
-            <div id="results"></div> --}}
+            
+            <div id="results"></div> 
 
-            <div class='col-md-12'>
-                <div class='card'>
-                    <div class='card-body'>
-                        <table class='table'>
-                            <tbody>
-                                <tr>
-                                    <th>Imsak</th>
-                                    <td>10.15</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+
 
 
         </div>
