@@ -104,7 +104,7 @@ Sensei : Mohd Shahril, thanks for zone.json :P
                                 <option value="Terengganu">Terengganu</option>
                             </select>
 
-                            <label>Zone: </label>                            
+                            <label>Zone: </label>
                             <select id="pilih_zone" name="pilih_zone" class="custom-select custom-select-lg">
                                 <option selected>Select Zone</option>
                             </select>
@@ -116,12 +116,6 @@ Sensei : Mohd Shahril, thanks for zone.json :P
     </main>
 
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <!-- append result here -->
-                    <div id="results"></div>
-                </div>
-            </div>
-        </div>
+
+        <div id="results"></div>
     </div>
