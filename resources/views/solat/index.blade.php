@@ -116,6 +116,5 @@ Sensei : Mohd Shahril, thanks for zone.json :P
     </main>
 
     <div class="row justify-content-center">
-
         <div id="results"></div>
     </div>

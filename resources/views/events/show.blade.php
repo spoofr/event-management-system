@@ -13,8 +13,7 @@
                     <p>Event Description:
                         <b>{{ $event->event_description }}</b>
                     </p>
-                    <p>Event Color: 
-                        @if($event->event_color == '#1e87f0')
+                    <p>Event Color: @if($event->event_color == '#1e87f0')
                         <span class="badge badge-primary" style="background-color: #1e87f0">Blue</span>
                         @elseif($event->event_color == '#f0506e')
                         <span class="badge badge-primary" style="background-color: #f0506e">Red</span>
@@ -73,9 +72,9 @@
                                                 <label class="col-sm-3 col-form-label">Event Color: </label>
                                                 <div class="col-sm-9">
                                                     <select name="event_color" class="form-control">
-                                                        <option value="#1e87f0">Blue</option>
-                                                        <option value="#faa05a">Orange</option>
-                                                        <option value="#f0506e">Red</option>
+                                                        <option value="#1e87f0" {{ $event->event_color == '#1e87f0' ? 'selected' : '' }}>Blue</option>
+                                                        <option value="#f0506e" {{ $event->event_color == '#f0506e' ? 'selected' : '' }}>Red</option>
+                                                        <option value="#faa05a" {{ $event->event_color == '#faa05a' ? 'selected' : '' }}>Orange</option>
                                                     </select>
                                                     @if ($errors->has('event_description'))
                                                     <div class="text-danger mt-3">
