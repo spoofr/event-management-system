@@ -107,17 +107,13 @@ Sensei : Mohd Shahril, thanks for zone.json :P
                         <option selected>Select Zone</option>
                     </select>
                 </div>
-            </div></main>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <!-- append result here -->
-                        <div id="results"></div>
-                    </div>
-                </div>
-            </div></div>
+            </div>
+        </main>
+
+        <div class="container">
+            <div class="row">
+                <div id="results"></div>
+            </div>
         </div>
     </div>
 </div>
