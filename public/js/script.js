@@ -49,7 +49,6 @@ $(document).ready(function () {
 			var isyak = convertTime(data["waktu_isyak"]);
 
 			var results =
-				"<div class='col-md-6'><div class='card'><div class='card-body'>" +
 				"<table class='table'>" +
 				"<tbody>" +
 				"<tr><th>Imsak</th><td>" + imsak + "</td></tr>" +
@@ -59,16 +58,15 @@ $(document).ready(function () {
 				"<tr><th>Asar</th><td>" + asar + "</td></tr>" +
 				"<tr><th>Maghrib</th><td>" + maghrib + "</td></tr>" +
 				"<tr><th>Isyak</th><td>" + isyak + "</td></tr>" +
-				"</tbody></table></div></div></div>";
+				"</tbody></table>";
 
-			var panel1 = '<div class="col-md-6 center-block">' +
-				'<div class="panel panel-danger">' +
-				'<div class="panel-heading"></div>' +
-				'<div class="panel-body">';
+			var panel1 = "<div class='col-md-12'>" +
+				"<div class='card'>" +
+				"<div class='card-body'>";
 
-			var panel2 = '</div>' +
-				'</div>' +
-				'</div>';
+			var panel2 = "</div>" +
+				"</div>" +
+				"</div>";
 
 			$('#results').append(panel1 + results + panel2).hide().fadeIn('slow'); //append the result with slow fade in animation
 			$('.se-pre-con').fadeOut('fast'); // hide loading
