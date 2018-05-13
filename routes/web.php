@@ -24,3 +24,7 @@ Route::get('/events/{event}', 'EventsController@show')->name('event.show')->midd
 Route::patch('/events/update/{event}', 'EventsController@update')->name('event.update')->middleware('auth');
 
 Route::get('/waktu-solat', 'SolatController@index')->name('solat.index')->middleware('auth');
+
+Route::get('/hadith/create', 'HadithController@create')->name('hadith.create')->middleware('auth');
+Route::post('/hadith', 'HadithController@store')->name('hadith.store')->middleware('auth');
+Route::delete('/hadith/destroy/{hadith}', 'HadithController@destroy')->name('hadith.destroy');

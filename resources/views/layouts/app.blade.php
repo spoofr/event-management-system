@@ -52,7 +52,8 @@
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('event.index') }}">Events</a>
-                                <a class="dropdown-item" href="#">Waktu solat</a>
+                                <a class="dropdown-item" href="{{ route('solat.index') }}">Waktu solat</a>
+                                <a class="dropdown-item" href="{{ route('hadith.create') }}">Hadith</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
