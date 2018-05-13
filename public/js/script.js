@@ -60,7 +60,7 @@ $(document).ready(function () {
 				"<tr><th>Isyak</th><td>" + isyak + "</td></tr>" +
 				"</tbody></table></div></div></div>";
 
-			var panel1 = "<div class='col-md-6'>" +
+			var panel1 = "<div class='col-md-12'>" +
 				"<div class='card'>" +
 				"<div class='card-body'>";
 
